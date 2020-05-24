@@ -5,12 +5,12 @@ import Fade from 'react-reveal/Fade';
 
 
 
-const First = ({classes, mobile, mobile2})=>{
+const First = ({classes, mobile, mobile2, firstRef, refs})=>{
     const [ open, setOpen ] = useState(false);
     return(
-            <Grid item container className={classes.image} justify='center'>
+            <Grid item container className={classes.image} justify='center' ref={firstRef}>
                 <Grid xs={12} item>
-                    <Navbar classes={classes} mobile={mobile} mobile2={mobile2} open={open} setOpen={setOpen}/>
+                    <Navbar classes={classes} mobile={mobile} mobile2={mobile2} open={open} setOpen={setOpen} refs={refs}/>
                 </Grid>
                 {!open ? <Grid item container xs={12} justify='center'>
                     <Grid container item xs={!mobile? 12:6} style={{backgroundColor:'transparent'}}>

@@ -1,26 +1,13 @@
 import React from 'react';
 import 'date-fns';
-import {Grid, Typography, Paper, CssBaseline, TextField, Button} from '@material-ui/core';
+import {Grid, Typography, Paper, CssBaseline} from '@material-ui/core';
 import Fade from 'react-reveal/Fade';
-import DateFnsUtils from '@date-io/date-fns';
-import {
-  MuiPickersUtilsProvider,
-  KeyboardTimePicker,
-  KeyboardDatePicker,
-} from '@material-ui/pickers';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import LinesEllipsis from 'react-lines-ellipsis';
 
-const Third = ({classes, mobile, mobile2})=>{
+const Third = ({classes, mobile, mobile2, secondRef})=>{
 
-    const [selectedDate, setSelectedDate] = React.useState(null);
-    const mobile3 = useMediaQuery('(min-width:1160px)'); /* This hooks helps me to know if user's screen is from a mobile */
-    const handleDateChange = (date) => {
-        setSelectedDate(date);
-    };
 
     return(
-            <Grid item container className={classes.root} justify='center' style={{padding:!mobile2?'1vh':'8vh'}}>
+            <Grid item container className={classes.root} justify='center' style={{padding:!mobile2?'1vh':'8vh'}} ref={secondRef}>
             <CssBaseline/>
                 <Grid container item xs={12} sm={12} md={12} lg={12} component={Paper} elevation={7} justify='center'>
                         <Grid container style={{padding:!mobile?'5vh':'8vh'}} justify='center'>

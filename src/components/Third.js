@@ -88,7 +88,7 @@ export const validatorArg = new FormValidator([
   ]);
 
 let validationResponse =  {};  
-const Third = ({classes, mobile, mobile2})=>{
+const Third = ({classes, mobile, mobile2, thirdRef})=>{
 
     const [selectedDate, setSelectedDate] = React.useState(null);
     const mobile3 = useMediaQuery('(min-width:1160px)'); /* This hooks helps me to know if user's screen is from a mobile */
@@ -137,16 +137,8 @@ const Third = ({classes, mobile, mobile2})=>{
         setSelectedDate(date);
     };
 
-
-    function formatDate(date) {
-        let fecha = new Date(date)
-        return fecha.getFullYear() + '/' + 
-          (fecha.getMonth() + 1) + '/' + 
-          fecha.getDate() + ' ' 
-      }
-
     return(
-            <Grid item container className={classes.root} justify='center' style={{padding:!mobile2?'1vh':'8vh', height:!mobile?'130vh':'100vh'}} >
+            <Grid item container className={classes.root} justify='center' style={{padding:!mobile2?'1vh':'8vh', height:!mobile?'130vh':'100vh'}} ref={thirdRef}>
             <CssBaseline/>
                 { mobile3 && (<Grid item xs={false} sm={false} md={false} lg={7} component={Paper} className={classes.image2} elevation={7} square></Grid>)}
                 <Grid container item xs={12} sm={12} md={12} lg={5} component={Paper} elevation={7} justify='center' >

@@ -1,12 +1,14 @@
-import React, { Component, useRef, useEffect } from 'react';
+import React from 'react';
 import {Grid, Typography, Link} from '@material-ui/core';
 import HamburgerMenu from 'react-hamburger-menu';
 import Fade from 'react-reveal/Fade';
 
 
-const Navbar = ({classes, mobile, mobile2, open, setOpen}) =>{
+const Navbar = ({classes, mobile, mobile2, open, setOpen, refs}) =>{
 
-    
+    const onClickLink = (i)=>{
+        window.scrollTo(0, refs[i]) 
+    };
     
     const handleClick = ()=>{
         setOpen(!open);
@@ -32,21 +34,21 @@ const Navbar = ({classes, mobile, mobile2, open, setOpen}) =>{
                     (<Grid container spacing={4}>
                         <Grid container item xs={12} justify='center' alignItems='center'>
                             <Fade duration={500}>
-                            <Typography component={Link} to="/#" variant="h5" className={classes.NavLink} style={{fontSize:!mobile? '22px':'20px'}}>
+                            <Typography component={Link} to="/#" onClick={()=>onClickLink(0)} variant="h5" className={classes.NavLink} style={{fontSize:!mobile? '22px':'20px'}}>
                                 Inicio 
                             </Typography>
                             </Fade>
                         </Grid>
                         <Grid container item xs={12} justify='center' alignItems='center'>
                             <Fade duration={700}>
-                            <Typography component={Link} to="/#" variant="h5" className={classes.NavLink} style={{fontSize:!mobile? '22px':'20px'}}>
+                            <Typography component={Link} to="/#" onClick={()=>onClickLink(1)} variant="h5" className={classes.NavLink} style={{fontSize:!mobile? '22px':'20px'}}>
                                 Acerca de nosotros
                             </Typography>
                             </Fade>
                         </Grid>
                         <Grid container item xs={12} justify='center' alignItems='center'>
                             <Fade duration={900}>
-                            <Typography component={Link} to="/#" variant="h5" className={classes.NavLink} style={{fontSize:!mobile? '22px':'20px'}}>
+                            <Typography component={Link} to="/#" onClick={()=>onClickLink(2)} variant="h5" className={classes.NavLink} style={{fontSize:!mobile? '22px':'20px'}}>
                                 Temporada
                             </Typography>
                             </Fade>
@@ -91,17 +93,17 @@ const Navbar = ({classes, mobile, mobile2, open, setOpen}) =>{
         :
             <Grid xs={12} md={12} container item justify='space-between' style={{backgroundColor:'transparent', zIndex:'99999'}}>
                 <Grid item>
-                    <Typography component={Link} to="/#" variant="h5" className={classes.NavLink} style={{fontSize:!mobile? '16px':'20px'}}>
+                    <Typography component={Link} to="/#" onClick={()=>onClickLink(0)} variant="h5" className={classes.NavLink} style={{fontSize:!mobile? '16px':'20px'}}>
                         Inicio 
                     </Typography>
                 </Grid>
                 <Grid item>
-                    <Typography component={Link} to="/#" variant="h5" className={classes.NavLink} style={{fontSize:!mobile? '16px':'20px'}}>
+                    <Typography component={Link} to="/#" onClick={()=>onClickLink(1)} variant="h5" className={classes.NavLink} style={{fontSize:!mobile? '16px':'20px'}}>
                         Acerca de nosotros
                     </Typography>
                 </Grid>
                 <Grid item>
-                    <Typography component={Link} to="/#" variant="h5" className={classes.NavLink} style={{fontSize:!mobile? '16px':'20px'}}>
+                    <Typography component={Link} to="/#" onClick={()=>onClickLink(2)} variant="h5" className={classes.NavLink} style={{fontSize:!mobile? '16px':'20px'}}>
                         Temporada
                     </Typography>
                 </Grid>
