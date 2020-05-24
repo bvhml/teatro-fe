@@ -31,7 +31,7 @@ const Third = ({classes, mobile, mobile2})=>{
                                     </Typography>
                                     </Fade>
                                 </Grid>
-                                <Fade bottom duration={1000}>
+                                <Fade duration={1100}>
                                 <Grid item xs={12} style={{backgroundColor:'transparent',height:!mobile? '60vh':'500px', overflow:'auto'}}>
                                     <Typography variant={!mobile? "h5":"h5"} style={{color:'black', fontSize:'20px', textAlign:'justify'}}>
                                     Fundado por don Julio Abril Valdez a finales del siglo XIX, el Teatro Abril, antes con el nombre de Teatro Olimpia, estaba ubicado en la 11 Avenida y séptima calle esquina del actual Centro Histórico de Guatemala. Para 1912 se traslada toda la compañía al local que ocupa en la actualidad—la 9ave. y 14 calle con el nombre de Teatro Abril.

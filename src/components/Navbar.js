@@ -29,7 +29,7 @@ const Navbar = ({classes, mobile, mobile2, open, setOpen}) =>{
                     />
                 </Grid>
                 {open && 
-                    (<Grid container spacing={6}>
+                    (<Grid container spacing={4}>
                         <Grid container item xs={12} justify='center' alignItems='center'>
                             <Fade duration={500}>
                             <Typography component={Link} to="/#" variant="h5" className={classes.NavLink} style={{fontSize:!mobile? '22px':'20px'}}>
