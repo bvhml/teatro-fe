@@ -146,6 +146,11 @@ let useStyles = makeStyles(theme => ({
   iconButton: {
     padding: 10,
   },
+  botonSubir:{
+    position: 'fixed',
+    bottom: theme.spacing(2),
+    right: theme.spacing(1),
+  }
 }));
 
 

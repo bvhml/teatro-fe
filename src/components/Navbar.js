@@ -7,7 +7,7 @@ import Fade from 'react-reveal/Fade';
 const Navbar = ({classes, mobile, mobile2, open, setOpen, refs}) =>{
 
     const onClickLink = (i)=>{
-        window.scrollTo(0, refs[i]) 
+        window.scroll({top:refs[i], left:0,behavior: 'smooth'}) 
     };
     
     const handleClick = ()=>{

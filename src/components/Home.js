@@ -1,7 +1,8 @@
 import React, {useRef, useEffect, useState} from 'react';
-import {Grid, CssBaseline} from '@material-ui/core';
+import {Grid, CssBaseline, Tooltip, IconButton, Fab} from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import {First, Second, Third} from './';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 //import LanguageIcon from '@material-ui/icons/Language';
 
 const Home = ({classes}) =>{
@@ -20,10 +21,15 @@ const Home = ({classes}) =>{
     return(
         <Grid container component="main" className={classes.root} fixed={'true'}>
         <CssBaseline/>
+        <Tooltip title="Ir hasta arriba" aria-label="add" style={{zIndex:'9999'}}>
+            <Fab className={classes.botonSubir} onClick={()=> window.scroll({top:0, left:0,behavior: 'smooth'})}>
+            <ArrowUpwardIcon />
+            </Fab>
+        </Tooltip>
         <Grid container style={{backgroundColor: 'rgba(0,0,0,0.5)',height:'100vh', position:'absolute'}}/>
         <First mobile={mobile} mobile2={mobile2} classes={classes} firstRef={firstRef} refs={refs}/>
         <Second mobile={mobile} mobile2={mobile2} classes={classes} secondRef={secondRef}/>
-        <Third mobile={mobile} mobile2={mobile2} classes={classes} thirdRef={thirdRef}/>    
+        <Third mobile={mobile} mobile2={mobile2} classes={classes} thirdRef={thirdRef}/> 
         </Grid>
     );
 }

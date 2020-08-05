@@ -16,7 +16,7 @@ const First = ({classes, mobile, mobile2, firstRef, refs})=>{
                     <Grid container item xs={!mobile? 12:6} style={{backgroundColor:'transparent'}}>
                         <Grid item xs={12}>
                         <Fade bottom duration={500}>
-                            <Typography variant={!mobile? "caption":"body1"} style={{color:'white', fontSize:'20px', textAlign:'justify'}}>
+                            <Typography variant={"h5"} style={{color:'white', fontSize:'20px', textAlign:'justify'}}>
                             La misión del Teatro Abril es ser el lugar de entretenimiento de la región con las producciones teatrales más excepcionales que eleven el espíritu y examinen las preguntas universales de nuestra condición humana.
                             </Typography>
                         </Fade>
